@@ -4,23 +4,30 @@
   "description": "A JavaScript Map() or a Similar() object if Map is not available.",
   "license": "MIT",
   "author": "@thinkloop",
+  "keywords": [
+    "map",
+    "polyfill",
+    "javascript",
+    "js",
+    "alternative",
+    "fast"
+  ],
+
   "homepage": "https://github.com/thinkloop/map-or-similar#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/thinkloop/map-or-similar.git"
-  },
-  "bugs": {
-    "url": "https://github.com/thinkloop/map-or-similar/issues"
-  },
+  "repository": { "type": "git", "url": "git+https://github.com/thinkloop/map-or-similar.git" },
+  "bugs": { "url": "https://github.com/thinkloop/map-or-similar/issues" },
+
   "main": "src/map-or-similar.js",
+
   "scripts": {
     "prebuild": "npm run test",
-    "build": "npm run build:browserify && npm run build:minify && npm run build:gzip",
-    "build:browserify": "browserify src/map-or-similar.js --detectGlobals false --standalone map-or-similar | derequire > map-or-similar.js",
-    "build:minify": "uglifyjs map-or-similar.js --compress drop_console,unused=false --mangle --screw-ie8 > map-or-similar.min.js",
-    "build:gzip": "gzip --best -v -c map-or-similar.min.js > map-or-similar.min.gzip.js",
+    "build": "npm -s run build:browserify | tee map-or-similar.js | npm -s run build:minify | tee map-or-similar.min.js | npm -s run build:gzip > map-or-similar.min.gzip.js",
+    "build:browserify": "browserify src/map-or-similar.js --detectGlobals false --standalone map-or-similar | derequire",
+    "build:minify": "uglifyjs --compress drop_console,unused=false --mangle --screw-ie8",
+    "build:gzip": "gzip --best -v -c",
     "test": "JASMINE_CONFIG_PATH=jasmine.json jasmine"
   },
+
   "devDependencies": {
     "browserify": "^13.0.0",
     "derequire": "^2.0.3",
