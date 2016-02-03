@@ -14,7 +14,7 @@ npm install map-or-similar --save
 Supports the following methods and properties identically to Map():
 
 ```Slim
-set(key, val)     :Sets a value to a key. Key can be a complex object, array, etc.
+set(key, val)     : Sets a value to a key. Key can be a complex object, array, etc.
 get(key)          : Returns the value of a key.
 has(key)          : Returns true if the key exists, otherwise false.
 delete(key)       : Deletes a key and its value.
@@ -42,3 +42,7 @@ Does not support other Map methods or properties.
 ```javascript
 npm run test
 ```
+
+## License
+
+Released under an MIT license.
