@@ -20,8 +20,8 @@
   "main": "src/map-or-similar.js",
 
   "scripts": {
-    "prebuild": "npm run test",
-    "build": "npm -s run build:browserify | tee map-or-similar.js | npm -s run build:minify | tee map-or-similar.min.js | npm -s run build:gzip > map-or-similar.min.gzip.js",
+    "prebuild": "npm run -s test",
+    "build": "npm run -s build:browserify | tee map-or-similar.js | npm run -s build:minify | tee map-or-similar.min.js | npm run -s build:gzip > map-or-similar.min.gzip.js",
     "build:browserify": "browserify src/map-or-similar.js --detectGlobals false --standalone map-or-similar | derequire",
     "build:minify": "uglifyjs --compress drop_console,unused=false --mangle --screw-ie8",
     "build:gzip": "gzip --best -v -c",
