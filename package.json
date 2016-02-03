@@ -27,7 +27,8 @@
     "build:browserify": "browserify src/map-or-similar.js --detectGlobals false --standalone map-or-similar | derequire",
     "build:minify": "uglifyjs --compress drop_console,unused=false --mangle --screw-ie8",
     "build:gzip": "gzip --best -v -c",
-    "test": "JASMINE_CONFIG_PATH=jasmine.json jasmine"
+    "test": "JASMINE_CONFIG_PATH=jasmine.json jasmine",
+    "prepublish": "npm run build && npm version patch && git add --all && git commit -m 'publish' && git push && git push --tags"
   },
   "devDependencies": {
     "browserify": "^13.0.0",
