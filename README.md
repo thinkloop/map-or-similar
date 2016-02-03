@@ -14,12 +14,12 @@ npm install map-or-similar --save
 Supports the following methods and properties identically to Map():
 
 ```Slim
-    set(key, val) :Sets a value to a key. Key can be a complex object, array, etc.
-    get(key)      : Returns the value of a key.
-    has(key)      : Returns true if the key exists, otherwise false.
- delete(key)      : Deletes a key and its value.
+set(key, val)     :Sets a value to a key. Key can be a complex object, array, etc.
+get(key)          : Returns the value of a key.
+has(key)          : Returns true if the key exists, otherwise false.
+delete(key)       : Deletes a key and its value.
 forEach(callback) : Invokes callback(val, key, object) once for each key-value pair in insertion order.
-   size           : Returns the number of keys-value pairs.
+size              : Returns the number of keys-value pairs.
 ```
 
 ```javascript
