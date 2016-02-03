@@ -1,6 +1,6 @@
 {
   "name": "map-or-similar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A JavaScript (JS) Map or a similar structure if Map() is not available.",
   "license": "MIT",
   "author": "@thinkloop",
