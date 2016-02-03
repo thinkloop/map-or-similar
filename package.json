@@ -1,0 +1,33 @@
+{
+  "name": "map-or-similar",
+  "version": "1.0.0",
+  "description": "A JavaScript (JS) Map or a similar structure if Map() is not available.",
+  "license": "MIT",
+  "author": "@thinkloop",
+  "homepage": "https://github.com/thinkloop/map-or-similar#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thinkloop/map-or-similar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thinkloop/map-or-similar/issues"
+  },
+  "main": "src/map-or-similar.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "prebuild": "npm run test",
+    "build": "npm run build:browserify && npm run build:minify && npm run build:gzip",
+    "build:browserify": "browserify src/map-or-similar.js --detectGlobals false --standalone map-or-similar | derequire > map-or-similar.js",
+    "build:minify": "uglifyjs map-or-similar.js --compress drop_console,unused=false --mangle --screw-ie8 > map-or-similar.min.js",
+    "build:gzip": "gzip --best -v -c map-or-similar.min.js > map-or-similar.min.gzip.js",
+    "test": "jasmine ./tests/tests.js"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "derequire": "^2.0.3",
+    "jasmine": "^2.4.1",
+    "uglify-js": "^2.6.1"
+  }
+}
