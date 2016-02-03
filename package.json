@@ -19,7 +19,7 @@
     "build:browserify": "browserify src/map-or-similar.js --detectGlobals false --standalone map-or-similar | derequire > map-or-similar.js",
     "build:minify": "uglifyjs map-or-similar.js --compress drop_console,unused=false --mangle --screw-ie8 > map-or-similar.min.js",
     "build:gzip": "gzip --best -v -c map-or-similar.min.js > map-or-similar.min.gzip.js",
-    "test": "JASMINE_CONFIG_PATH=jasmine.json jasmine --verbose"
+    "test": "JASMINE_CONFIG_PATH=jasmine.json jasmine"
   },
   "devDependencies": {
     "browserify": "^13.0.0",
