@@ -1,6 +1,6 @@
 {
   "name": "map-or-similar",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "A JavaScript Map() or a Similar() object if Map is not available.",
   "license": "MIT",
   "author": "@thinkloop",
@@ -12,13 +12,15 @@
     "alternative",
     "fast"
   ],
-
   "homepage": "https://github.com/thinkloop/map-or-similar#readme",
-  "repository": { "type": "git", "url": "git+https://github.com/thinkloop/map-or-similar.git" },
-  "bugs": { "url": "https://github.com/thinkloop/map-or-similar/issues" },
-
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thinkloop/map-or-similar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thinkloop/map-or-similar/issues"
+  },
   "main": "src/map-or-similar.js",
-
   "scripts": {
     "prebuild": "npm run -s test",
     "build": "npm run -s build:browserify | tee map-or-similar.js | npm run -s build:minify | tee map-or-similar.min.js | npm run -s build:gzip > map-or-similar.min.gzip.js",
@@ -27,7 +29,6 @@
     "build:gzip": "gzip --best -v -c",
     "test": "JASMINE_CONFIG_PATH=jasmine.json jasmine"
   },
-
   "devDependencies": {
     "browserify": "^13.0.0",
     "derequire": "^2.0.3",
