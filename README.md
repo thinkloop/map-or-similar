@@ -1,5 +1,5 @@
 # Map Or Similar
-Returns a JavaScript Map() or a Similar() object if Map is not available.
+A JavaScript Map() or a Similar() object if Map is not available.
 Supports complex objects for keys.
 Highly performant.
 No dependencies.
@@ -25,14 +25,14 @@ size         : Returns a count of keys-value pairs.
 var MapOrSimilar = require('map-or-similar');
 var mapOrSimilar = new MapOrSimilar();
 
-mapOrSimilar.set({ prop: 'a complex object as key '}, 'a value');
-mapOrSimilar.get({ prop: 'a complex object as key '}); // returns 'a value'
+mapOrSimilar.set({ prop: 'a complex object as key '}, 'my value'); // sets 'my value' to specified key
+mapOrSimilar.get({ prop: 'a complex object as key '}); // returns 'my value'
 mapOrSimilar.has({ prop: 'a complex object as key '}); // returns true
 mapOrSimilar.size // returns 1
 mapOrSimilar.delete({ prop: 'a complex object as key '}); // deletes item
 ```
 
-Does not support any other Map() methods or properties.
+Does not support any other Map methods or properties.
 
 ## Test
 ```javascript
