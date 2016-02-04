@@ -1,5 +1,5 @@
 # Map Or Similar
-A JavaScript Map() or a Similar() object if Map is not available.
+A JavaScript Map() or a Similar() object polyfill if Map is not available.
 Supports complex objects for keys.
 Highly performant.
 No dependencies.
@@ -27,11 +27,11 @@ var MapOrSimilar = require('map-or-similar');
 var mapOrSimilar = new MapOrSimilar();
 var complexKey = { prop: 'a complex object as key' };
 
-mapOrSimilar.set(complexKey, 'my value'); // sets 'my value' to the complex key { prop: 'a complex object as key' }
+mapOrSimilar.set(complexKey, 'my value'); // sets value of complex key { prop: 'a complex object as key' } to 'my value'
 mapOrSimilar.get(complexKey); // returns 'my value'
 mapOrSimilar.has(complexKey); // returns true
 mapOrSimilar.size // returns 1
-mapOrSimilar.forEach((val, key) => { /* iterates once in this case, val is 'my value', key is { prop: 'a complex object as key' }*/});
+mapOrSimilar.forEach((val, key) => { /* iterates once in this case, val is 'my value', key is { prop: 'a complex object as key' }*/ });
 mapOrSimilar.delete(complexKey); // deletes key/value
 mapOrSimilar.size // returns 0
 ```
