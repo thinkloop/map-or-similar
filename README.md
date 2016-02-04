@@ -1,5 +1,5 @@
 # Map Or Similar
-A JavaScript Map() or a Similar() object polyfill if Map is not available.
+A JavaScript Map() or Similar() object polyfill if Map is not available.
 Supports complex objects for keys.
 Highly performant.
 No dependencies.
