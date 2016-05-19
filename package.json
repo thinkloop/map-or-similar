@@ -28,12 +28,13 @@
     "build:minify": "uglifyjs --compress drop_console,unused=false --mangle --screw-ie8",
     "build:gzip": "gzip --best -v -c",
     "test": "JASMINE_CONFIG_PATH=jasmine.json jasmine",
-    "prepublish": "npm run build && git add --all && git commit -m 'build & publish' && npm version minor && git push && git push --tags"
+    "prepublish": "npm run build && git add --all && git commit -m 'build & publish' && npm version patch && git push && git push --tags"
   },
   "devDependencies": {
-    "browserify": "^13.0.0",
+    "browserify": "^13.0.1",
     "derequire": "^2.0.3",
     "jasmine": "^2.4.1",
-    "uglify-js": "^2.6.1"
+    "npm-check-updates": "^2.6.5",
+    "uglify-js": "^2.6.2"
   }
 }
