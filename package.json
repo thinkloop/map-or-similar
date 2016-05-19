@@ -1,6 +1,6 @@
 {
   "name": "map-or-similar",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A JavaScript (JS) Map or Similar object polyfill if Map is not available.",
   "license": "MIT",
   "author": "@thinkloop",
