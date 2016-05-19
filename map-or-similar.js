@@ -17,7 +17,7 @@ function Similar() {
 Similar.prototype.get = function(key) {
     var index;
 
-    if (this.lastItem && this.lastItem.key === key) {
+    if (this.lastItem && this.isEqual(this.lastItem.key, key)) {
         return this.lastItem.val;
     }
 
@@ -33,7 +33,7 @@ Similar.prototype.get = function(key) {
 Similar.prototype.set = function(key, val) {
     var index;
 
-    if (this.lastItem && this.lastItem.key === key) {
+    if (this.lastItem && this.isEqual(this.lastItem.key, key)) {
         this.lastItem.val = val;
         return this;
     }
@@ -55,7 +55,7 @@ Similar.prototype.set = function(key, val) {
 Similar.prototype.delete = function(key) {
     var index;
 
-    if (this.lastItem && this.lastItem.key === key) {
+    if (this.lastItem && this.isEqual(this.lastItem.key, key)) {
         this.lastItem = undefined;
     }
 
@@ -73,7 +73,7 @@ Similar.prototype.delete = function(key) {
 Similar.prototype.has = function(key) {
     var index;
 
-    if (this.lastItem && this.lastItem.key === key) {
+    if (this.lastItem && this.isEqual(this.lastItem.key, key)) {
         return true;
     }
 
@@ -96,11 +96,16 @@ Similar.prototype.forEach = function(callback, thisArg) {
 Similar.prototype.indexOf = function(key) {
     var i;
     for (i = 0; i < this.size; i++) {
-        if (this.list[i].key === key) {
+        if (this.isEqual(this.list[i].key, key)) {
             return i;
         }
     }
     return -1;
+};
+
+// check if the numbers are equal, or whether they are both precisely NaN (isNaN returns true for all non-numbers)
+Similar.prototype.isEqual = function(val1, val2) {
+    return val1 === val2 || (val1 !== val1 && val2 !== val2);
 };
 
 module.exports = Similar;
