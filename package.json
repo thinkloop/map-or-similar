@@ -24,11 +24,13 @@
   "scripts": {
     "prebuild": "npm run -s test",
     "build": "npm run -s build:browserify | tee map-or-similar.js | npm run -s build:minify | tee map-or-similar.min.js | npm run -s build:gzip > map-or-similar.min.gzip.js",
+    "publish_to_npm": "npm run build && git add --all && git commit -m \"build for publish\" && npm version patch && git push && git push --tags && npm publish",
+    "_": "",
+    "test": "JASMINE_CONFIG_PATH=jasmine.json jasmine",
+    "__": "",
     "build:browserify": "browserify src/map-or-similar.js --detectGlobals false --standalone map-or-similar | derequire",
     "build:minify": "uglifyjs --compress drop_console,unused=false --mangle --screw-ie8",
-    "build:gzip": "gzip --best -v -c",
-    "test": "JASMINE_CONFIG_PATH=jasmine.json jasmine",
-    "prepublish": "npm run build && git add --all && git commit -m 'build & publish' && npm version patch && git push && git push --tags"
+    "build:gzip": "gzip --best -v -c"
   },
   "devDependencies": {
     "browserify": "^13.0.1",
