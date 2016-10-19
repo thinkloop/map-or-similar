@@ -1,5 +1,5 @@
 # Map Or Similar
-Returns a JavaScript Map() or similar object with the same interface, if Map is not available.
+Returns a JavaScript Map() or a similar object with the same interface, if Map is not available.
 Focuses on performance.
 No dependencies.
 Made for the browser and nodejs.
