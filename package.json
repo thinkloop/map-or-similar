@@ -3,7 +3,7 @@
   "version": "1.2.3",
   "description": "A JavaScript (JS) Map or Similar object polyfill if Map is not available.",
   "license": "MIT",
-  "author": "@thinkloop",
+  "author": "Baz <baz@thinkloop.com>",
   "keywords": [
     "map",
     "polyfill",
@@ -20,23 +20,20 @@
   "bugs": {
     "url": "https://github.com/thinkloop/map-or-similar/issues"
   },
-  "main": "src/map-or-similar.js",
+  "main": "./map-or-similar.min.js",
   "scripts": {
-    "prebuild": "npm run -s test",
+    "test": "JASMINE_CONFIG_PATH=jasmine.json jasmine",
     "build": "npm run -s build:browserify | tee map-or-similar.js | npm run -s build:minify | tee map-or-similar.min.js | npm run -s build:gzip > map-or-similar.min.gzip.js",
     "publish_to_npm": "npm run build && git add --all && git commit -m \"build for publish\" && npm version patch && git push && git push --tags && npm publish",
-    "_": "",
-    "test": "JASMINE_CONFIG_PATH=jasmine.json jasmine",
     "__": "",
     "build:browserify": "browserify src/map-or-similar.js --detectGlobals false --standalone map-or-similar | derequire",
     "build:minify": "uglifyjs --compress drop_console,unused=false --mangle --screw-ie8",
     "build:gzip": "gzip --best -v -c"
   },
   "devDependencies": {
-    "browserify": "^13.0.1",
-    "derequire": "^2.0.3",
-    "jasmine": "^2.4.1",
-    "npm-check-updates": "^2.6.5",
-    "uglify-js": "^2.6.2"
+    "browserify": "13.1.1",
+    "derequire": "2.0.3",
+    "jasmine": "2.5.2",
+    "uglify-js": "2.7.5"
   }
 }

@@ -1,6 +1,9 @@
-if (typeof Map !== 'function' || (process && process.env && process.env.TEST_MAPORSIMILAR === 'true')) {
-	module.exports = require('./similar');
-}
-else {
-	module.exports = Map;
+module.exports = function(forceSimilar) {
+	if (typeof Map !== 'function' || forceSimilar) {
+		var Similar = require('./similar');
+		return new Similar();
+	}
+	else {
+		return new Map();
+	}
 }
